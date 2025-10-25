@@ -10,12 +10,12 @@ const app = express();
 
 // Middleware
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || ['http://localhost:3000', 'https://hms-opd-frontend-rq5u.vercel.app'],
+  origin: process.env.FRONTEND_URL || ['http://localhost:3000', 'https://hms-opd-frontend-v1.vercel.app'],
   credentials: true
 };
-app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
